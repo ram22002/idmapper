@@ -1,0 +1,9 @@
+{
+    "name": "dantotsu-mapper",
+    "version": "1.0.0",
+    "description": "Serverless API for mapping anime IDs between AniList and MyAnimeList",
+    "main": "api/mapper.js",
+    "engines": {
+        "node": "18.x"
+    }
+}
