@@ -1,4 +1,6 @@
+import 'dotenv/config';
 import { URL } from 'url';
+// FORCE UPDATE VERCEL DEPLOYMENT
 import Redis from 'ioredis';
 
 // Global cache (persists in memory as long as server is running/frozen)
