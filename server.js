@@ -48,7 +48,7 @@ const server = http.createServer(async (req, res) => {
         // For `npm run dev`, we need to serve it manually.
 
         let filePath = `./public${url.pathname}`;
-        if (url.pathname === '/') filePath = './public/status.html';
+        if (url.pathname === '/') filePath = './public/index.html';
 
         const extname = path.extname(filePath);
         let contentType = 'text/html';
