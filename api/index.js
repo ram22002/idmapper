@@ -65,9 +65,11 @@ export default async function handler(req, res) {
                 const days = Math.floor((uptime / (1000 * 60 * 60 * 24)));
 
                 responseData.uptime = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+                responseData.debug = { redis_enabled: true, status: redis.status };
 
             } catch (err) {
                 console.error('Redis fetch error', err);
+                responseData.debug = { redis_enabled: true, error: err.message };
             }
         } else {
             // In-Memory Uptime
@@ -77,6 +79,7 @@ export default async function handler(req, res) {
             const hours = Math.floor((uptime / (1000 * 60 * 60)) % 24);
             const days = Math.floor((uptime / (1000 * 60 * 60 * 24)));
             responseData.uptime = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+            responseData.debug = { redis_enabled: false, message: 'No REDIS_URL found' };
         }
 
         return res.status(200).json(responseData);
