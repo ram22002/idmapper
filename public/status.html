@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anime ID Mapper Status</title>
+    <!-- Roboto Font & Material Symbols -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
+    <style>
+        :root {
+            /* Material 3 Dark Colors */
+            --md-sys-color-background: #111318;
+            --md-sys-color-on-background: #E2E2E9;
+            --md-sys-color-surface: #111318;
+            --md-sys-color-surface-container: #1E2025;
+            --md-sys-color-surface-container-high: #282A2F;
+            --md-sys-color-on-surface: #E2E2E9;
+            --md-sys-color-on-surface-variant: #C4C6D0;
+            --md-sys-color-primary: #AEC6FF;
+            --md-sys-color-on-primary: #002E69;
+            --md-sys-color-primary-container: #004494;
+            --md-sys-color-on-primary-container: #D8E2FF;
+            --md-sys-color-secondary: #BBC6E4;
+            --md-sys-color-secondary-container: #3C4863;
+            --md-sys-color-tertiary: #DDBBDA;
+            --md-sys-color-tertiary-container: #553E55;
+            --md-sys-color-outline: #8E9099;
+            --md-sys-color-outline-variant: #44474F;
+            --md-sys-color-success: #6DD58C;
+            --md-sys-color-error: #FFB4AB;
+
+            --radius-medium: 12px;
+            --radius-large: 16px;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--md-sys-color-background);
+            color: var(--md-sys-color-on-background);
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 600px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            padding-top: 40px;
+        }
+
+        /* Header */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 4px;
+            margin-bottom: 8px;
+        }
+
+        .title {
+            font-size: 1.375rem;
+            font-weight: 400;
+            color: var(--md-sys-color-on-surface);
+            margin: 0;
+        }
+
+        .icon-btn {
+            background: none;
+            border: none;
+            color: var(--md-sys-color-on-surface-variant);
+            cursor: pointer;
+            padding: 8px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.2s;
+        }
+
+        .icon-btn:hover {
+            background-color: rgba(226, 226, 233, 0.08);
+            /* On-surface with opacity */
+            color: var(--md-sys-color-on-surface);
+        }
+
+        /* Status Cards Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .card {
+            background-color: var(--md-sys-color-surface-container);
+            border-radius: var(--radius-large);
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            /* Elevation 1 (shadow) */
+            box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15), 0px 1px 2px 0px rgba(0, 0, 0, 0.3);
+        }
+
+        .card.full-width {
+            grid-column: 1 / -1;
+        }
+
+        .card-label {
+            font-size: 0.875rem;
+            color: var(--md-sys-color-on-surface-variant);
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .card-value {
+            font-size: 1.5rem;
+            color: var(--md-sys-color-on-surface);
+            font-weight: 400;
+        }
+
+        .loading-text {
+            font-size: 1rem;
+            color: var(--md-sys-color-on-surface-variant);
+        }
+
+        /* Status Indicator in Text */
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: var(--md-sys-color-outline);
+            display: inline-block;
+        }
+
+        .status-dot.active {
+            background-color: var(--md-sys-color-success);
+            box-shadow: 0 0 8px rgba(109, 213, 140, 0.4);
+        }
+
+        .status-dot.error {
+            background-color: var(--md-sys-color-error);
+        }
+
+        /* API Documentation Section */
+        .doc-container {
+            display: none;
+            /* Hidden by default */
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 16px;
+            animation: fadeIn 0.3s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .doc-card {
+            background-color: var(--md-sys-color-surface-container-high);
+            border-radius: var(--radius-medium);
+            padding: 16px;
+            border: 1px solid var(--md-sys-color-outline-variant);
+        }
+
+        .doc-title {
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--md-sys-color-primary);
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .code-snippet {
+            font-family: 'Roboto Mono', monospace;
+            background-color: #000000;
+            color: var(--md-sys-color-tertiary);
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            overflow-x: auto;
+            white-space: pre-wrap;
+            border: 1px solid var(--md-sys-color-outline-variant);
+        }
+
+        .method {
+            color: var(--md-sys-color-on-primary-container);
+            background-color: var(--md-sys-color-primary-container);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1 class="title">Anime ID Mapper API</h1>
+            <button class="icon-btn" id="help-btn" title="Toggle Documentation">
+                <span class="material-symbols-outlined">help</span>
+            </button>
+        </div>
+
+        <!-- System Status (Full Width) -->
+        <div class="card full-width">
+            <div class="card-label">
+                <span class="material-symbols-outlined" style="font-size: 18px;">dns</span>
+                System Status
+            </div>
+            <div class="card-value" style="display: flex; align-items: center; gap: 12px;">
+                <span class="status-dot active" id="status-dot"></span>
+                <span id="status-text">Operational</span>
+            </div>
+        </div>
+
+        <!-- Stats Grid -->
+        <div class="stats-grid">
+            <div class="card">
+                <div class="card-label">
+                    <span class="material-symbols-outlined"
+                        style="font-size: 18px; color: var(--md-sys-color-primary);">bar_chart</span>
+                    Total Requests
+                </div>
+                <div class="card-value" id="total-requests">-</div>
+            </div>
+
+            <div class="card">
+                <div class="card-label">
+                    <span class="material-symbols-outlined" style="font-size: 18px; color: #FFB74D;">today</span>
+                    Requests Today
+                </div>
+                <div class="card-value" id="requests-today">-</div>
+            </div>
+
+            <div class="card">
+                <div class="card-label">
+                    <span class="material-symbols-outlined"
+                        style="font-size: 18px; color: var(--md-sys-color-secondary);">cloud_download</span>
+                    JSON Downloads
+                </div>
+                <div class="card-value" id="json-downloads">-</div>
+            </div>
+
+            <div class="card">
+                <div class="card-label">
+                    <span class="material-symbols-outlined"
+                        style="font-size: 18px; color: var(--md-sys-color-tertiary);">schedule</span>
+                    Uptime
+                </div>
+                <div class="card-value" id="uptime">-</div>
+            </div>
+        </div>
+
+        <!-- Documentation (Hidden by default) -->
+        <div class="doc-container" id="doc-section">
+            <div class="doc-card">
+                <div class="doc-title">
+                    <span class="material-symbols-outlined">link</span> Endpoints
+                </div>
+                <div style="margin-bottom: 12px;">
+                    <div style="margin-bottom: 4px; font-size: 0.9rem;">Get by AniList ID</div>
+                    <div class="code-snippet"><span class="method">GET</span>/api/mapper?anilist_id=21</div>
+                </div>
+                <div>
+                    <div style="margin-bottom: 4px; font-size: 0.9rem;">Get by MyAnimeList ID</div>
+                    <div class="code-snippet"><span class="method">GET</span>/api/mapper?mal_id=21</div>
+                </div>
+            </div>
+
+            <div class="doc-card">
+                <div class="doc-title">
+                    <span class="material-symbols-outlined">data_object</span> Response Example
+                </div>
+                <!-- User provided JSON -->
+                <div class="code-snippet" style="color: #AEC6FF;">{
+                    "thetvdb_id": 81797,
+                    "imdb_id": "tt0388629",
+                    "anisearch_id": 2227,
+                    "themoviedb_id": 37854,
+                    "kitsu_id": 12,
+                    "mal_id": 21,
+                    "type": "TV",
+                    "notify.moe_id": "jdZp5KmiR",
+                    "simkl_id": 38636,
+                    "anilist_id": 21,
+                    "livechart_id": 321,
+                    "anime-planet_id": "one-piece",
+                    "anidb_id": 69,
+                    "animecountdown_id": 38636
+                    }</div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        // Toggle Logic
+        const helpBtn = document.getElementById('help-btn');
+        const docSection = document.getElementById('doc-section');
+
+        helpBtn.addEventListener('click', () => {
+            const isHidden = getComputedStyle(docSection).display === 'none';
+            docSection.style.display = isHidden ? 'flex' : 'none';
+            // Update icon style or state if needed
+            helpBtn.style.color = isHidden ? 'var(--md-sys-color-primary)' : 'var(--md-sys-color-on-surface-variant)';
+        });
+
+        // Live Uptime Logic
+        let serverStartTime = null;
+
+        function updateUptimeDisplay() {
+            if (!serverStartTime) return;
+
+            const now = Date.now();
+            const uptime = now - serverStartTime;
+
+            const seconds = Math.floor((uptime / 1000) % 60);
+            const minutes = Math.floor((uptime / (1000 * 60)) % 60);
+            const hours = Math.floor((uptime / (1000 * 60 * 60)) % 24);
+            const days = Math.floor((uptime / (1000 * 60 * 60 * 24)));
+
+            const timeString = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+            document.getElementById('uptime').textContent = timeString;
+        }
+
+        // Start local ticker (updates every second)
+        setInterval(updateUptimeDisplay, 1000);
+
+        // API Fetch Logic
+        async function fetchStatus() {
+            try {
+                const response = await fetch('/api/status');
+                const data = await response.json();
+
+                // Status Text
+                const statusText = document.getElementById('status-text');
+                const statusDot = document.getElementById('status-dot');
+                statusText.textContent = data.status;
+
+                if (data.status === 'Operational') {
+                    statusDot.className = 'status-dot active';
+                } else {
+                    statusDot.className = 'status-dot error';
+                }
+
+                // Numbers
+                document.getElementById('total-requests').textContent = data.total_requests;
+                document.getElementById('requests-today').textContent = data.requests_today;
+                document.getElementById('json-downloads').textContent = data.json_downloads;
+
+                // Set start time for local ticker
+                if (data.start_time) {
+                    serverStartTime = data.start_time;
+                    updateUptimeDisplay(); // Immediate update
+                } else {
+                    // Fallback if API hasn't updated yet or old version
+                    document.getElementById('uptime').textContent = data.uptime || '-';
+                }
+
+            } catch (error) {
+                console.error('Error fetching status:', error);
+                document.getElementById('status-text').textContent = 'System Error';
+                document.getElementById('status-dot').className = 'status-dot error';
+            }
+        }
+
+        fetchStatus();
+        setInterval(fetchStatus, 5000); // Fetch stats every 5s
+    </script>
+</body>
+
+</html>

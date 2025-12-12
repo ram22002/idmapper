@@ -1,6 +1,9 @@
 import http from 'http';
 import { URL } from 'url';
+import fs from 'fs';
+import path from 'path';
 import handler from './api/mapper.js';
+import statusHandler from './api/status.js';
 
 const server = http.createServer(async (req, res) => {
     // Parse URL
@@ -25,7 +28,7 @@ const server = http.createServer(async (req, res) => {
     // Set CORS headers
     res.setHeader('Access-Control-Allow-Origin', '*');
 
-    // Only handle /api/mapper requests
+    // Routing
     if (url.pathname === '/api/mapper') {
         try {
             req.query = Object.fromEntries(url.searchParams);
@@ -33,13 +36,50 @@ const server = http.createServer(async (req, res) => {
         } catch (error) {
             res.status(500).json({ error: error.message });
         }
+    } else if (url.pathname === '/api/status') {
+        try {
+            statusHandler(req, res);
+        } catch (error) {
+            res.status(500).json({ error: error.message });
+        }
     } else {
-        res.status(404).json({ error: 'Not found' });
+        // Serve Static Files (Simple implementation for local dev)
+        // In Vercel, this is handled by `vercel.json` or public folder automatically.
+        // For `npm run dev`, we need to serve it manually.
+
+        let filePath = `./public${url.pathname}`;
+        if (url.pathname === '/') filePath = './public/status.html';
+
+        const extname = path.extname(filePath);
+        let contentType = 'text/html';
+        switch (extname) {
+            case '.js': contentType = 'text/javascript'; break;
+            case '.css': contentType = 'text/css'; break;
+            case '.json': contentType = 'application/json'; break;
+            case '.png': contentType = 'image/png'; break;
+            case '.jpg': contentType = 'image/jpg'; break;
+        }
+
+        fs.readFile(filePath, (error, content) => {
+            if (error) {
+                if (error.code == 'ENOENT') {
+                    res.writeHead(404);
+                    res.end('File not found');
+                } else {
+                    res.writeHead(500);
+                    res.end('Internal Server Error: ' + error.code);
+                }
+            } else {
+                res.writeHead(200, { 'Content-Type': contentType });
+                res.end(content, 'utf-8');
+            }
+        });
     }
 });
 
 const PORT = 3000;
 server.listen(PORT, () => {
     console.log(`✅ Server running at http://localhost:${PORT}`);
-    console.log(`📌 Test it: http://localhost:${PORT}/api/mapper?anilist_id=1`);
+    console.log(`📌 Mapper API: http://localhost:${PORT}/api/mapper?anilist_id=1`);
+    console.log(`📊 Status Page: http://localhost:${PORT}/`);
 });
