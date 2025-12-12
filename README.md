@@ -12,12 +12,12 @@ Serverless API for mapping anime IDs between AniList and MyAnimeList (MAL).
 
 ### Get anime by AniList ID
 ```
-GET https://your-url.vercel.app/api/mapper?anilist_id=20
+GET https://idmapper.vercel.app/api/mapper?anilist_id=20
 ```
 
 ### Get anime by MyAnimeList ID
 ```
-GET https://your-url.vercel.app/api/mapper?mal_id=20
+GET https://idmapper.vercel.app/api/mapper?mal_id=20
 ```
 
 ## Response Example
