@@ -56,7 +56,9 @@ The API returns a comprehensive set of IDs for the matched anime.
 ```
 
 ## 📊 Status Page
-Visit the root URL (`/`) to view the **Status Dashboard**.
+**[https://idmapper.vercel.app/](https://idmapper.vercel.app/)**
+
+Visit the Status Dashboard to view:
 - **System Status**: Real-time operational status.
 - **Statistics**: View Total Requests, Daily Requests, and detailed Uptime.
 - **Documentation**: Toggleable interactive documentation directly on the page.
