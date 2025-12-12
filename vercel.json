@@ -1,0 +1,16 @@
+{
+    "rewrites": [
+        {
+            "source": "/api/mapper",
+            "destination": "/api/index.js"
+        },
+        {
+            "source": "/api/status",
+            "destination": "/api/index.js"
+        },
+        {
+            "source": "/",
+            "destination": "/public/index.html"
+        }
+    ]
+}

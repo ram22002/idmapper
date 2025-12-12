@@ -2,8 +2,7 @@ import http from 'http';
 import { URL } from 'url';
 import fs from 'fs';
 import path from 'path';
-import handler from './api/mapper.js';
-import statusHandler from './api/status.js';
+import handler from './api/index.js'; // Use the unified handler
 
 const server = http.createServer(async (req, res) => {
     // Parse URL
@@ -29,16 +28,10 @@ const server = http.createServer(async (req, res) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
 
     // Routing
-    if (url.pathname === '/api/mapper') {
+    if (url.pathname === '/api/mapper' || url.pathname === '/api/status') {
         try {
             req.query = Object.fromEntries(url.searchParams);
             await handler(req, res);
-        } catch (error) {
-            res.status(500).json({ error: error.message });
-        }
-    } else if (url.pathname === '/api/status') {
-        try {
-            statusHandler(req, res);
         } catch (error) {
             res.status(500).json({ error: error.message });
         }
