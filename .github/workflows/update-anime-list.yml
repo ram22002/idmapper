@@ -1,0 +1,58 @@
+name: Update Anime List
+
+on:
+  schedule:
+    # Run daily at 2 AM UTC
+    - cron: '0 2 * * *'
+  workflow_dispatch: # Allow manual trigger
+
+jobs:
+  update-anime-list:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: Download latest anime-list-full.json
+        run: |
+          echo "Downloading latest anime-list-full.json..."
+          curl -L -o public/anime-list-full.json.new \
+            https://cdn.jsdelivr.net/gh/Fribb/anime-lists@master/anime-list-full.json
+      
+      - name: Check if file has changed
+        id: check_changes
+        run: |
+          if [ ! -f public/anime-list-full.json ]; then
+            echo "File doesn't exist, will create it"
+            echo "changed=true" >> $GITHUB_OUTPUT
+          elif ! cmp -s public/anime-list-full.json public/anime-list-full.json.new; then
+            echo "File has changed"
+            echo "changed=true" >> $GITHUB_OUTPUT
+          else
+            echo "No changes detected"
+            echo "changed=false" >> $GITHUB_OUTPUT
+          fi
+      
+      - name: Update file if changed
+        if: steps.check_changes.outputs.changed == 'true'
+        run: |
+          mv public/anime-list-full.json.new public/anime-list-full.json
+          echo "File updated successfully"
+      
+      - name: Clean up if no changes
+        if: steps.check_changes.outputs.changed == 'false'
+        run: |
+          rm public/anime-list-full.json.new
+          echo "Cleaned up temporary file"
+      
+      - name: Commit and push changes
+        if: steps.check_changes.outputs.changed == 'true'
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add public/anime-list-full.json
+          git commit -m "chore: update anime-list-full.json from upstream [skip ci]"
+          git push

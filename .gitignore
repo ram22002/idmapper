@@ -7,3 +7,4 @@ build/
 .vercel/
 .vercel
 .env*.local
+anime-lists/

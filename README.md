@@ -16,10 +16,23 @@ A high-performance Serverless API designed to map anime IDs across various platf
 `GET /api/mapper`
 
 ### Query Parameters
+Search by any of the following ID types:
+
 | Parameter | Description |
 | :--- | :--- |
 | `anilist_id` | Search by AniList ID |
 | `mal_id` | Search by MyAnimeList ID |
+| `thetvdb_id` | Search by TheTVDB ID |
+| `imdb_id` | Search by IMDB ID |
+| `anisearch_id` | Search by AniSearch ID |
+| `themoviedb_id` | Search by TheMovieDB ID |
+| `kitsu_id` | Search by Kitsu ID |
+| `notify.moe_id` | Search by notify.moe ID |
+| `simkl_id` | Search by Simkl ID |
+| `livechart_id` | Search by LiveChart ID |
+| `anime-planet_id` | Search by Anime-Planet ID |
+| `anidb_id` | Search by AniDB ID |
+| `animecountdown_id` | Search by AnimeCountdown ID |
 
 ### Examples
 
@@ -31,6 +44,16 @@ GET https://idmapper.vercel.app/api/mapper?anilist_id=21
 #### Get anime by MyAnimeList ID
 ```http
 GET https://idmapper.vercel.app/api/mapper?mal_id=21
+```
+
+#### Get anime by IMDB ID
+```http
+GET https://idmapper.vercel.app/api/mapper?imdb_id=tt0388629
+```
+
+#### Get anime by TheTVDB ID
+```http
+GET https://idmapper.vercel.app/api/mapper?thetvdb_id=81797
 ```
 
 ## 📦 Response Example
@@ -56,7 +79,7 @@ The API returns a comprehensive set of IDs for the matched anime.
 ```
 
 ## 📊 Status Page
-**[https://idmapper.vercel.app/](https://idmapper.vercel.app/)**
+**[Status](https://idmapper.vercel.app/)**
 
 Visit the Status Dashboard to view:
 - **System Status**: Real-time operational status.
@@ -77,4 +100,14 @@ Visit the Status Dashboard to view:
    The API will be available at `http://localhost:3000`.
 
 ## 📂 Data Source
-Data is sourced and cached from [Fribb's anime-lists](https://github.com/Fribb/anime-lists).
+- **Local CDN**: `public/anime-list-full.json` (cloned from the source repository)
+- **Original Source**: [Fribb's anime-lists](https://github.com/Fribb/anime-lists)
+- Data is cached in memory for 24 hours to minimize external fetching
+
+## 🔄 Automated Updates
+A GitHub Actions workflow automatically checks for updates from the upstream repository daily:
+- **Schedule**: Runs daily at 2 AM UTC
+- **Action**: Downloads the latest `anime-list-full.json` and commits changes if detected
+- **Manual Trigger**: Can be manually triggered from the Actions tab
+- **Workflow**: `.github/workflows/update-anime-list.yml`
+
