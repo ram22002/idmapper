@@ -116,11 +116,38 @@ export default async function handler(req, res) {
     const EXTERNAL_URL = 'https://cdn.jsdelivr.net/gh/Fribb/anime-lists@master/anime-list-full.json';
 
     try {
-        const { anilist_id, mal_id } = req.query;
+        // List of supported IDs to search by
+        const supportedIds = [
+            'anilist_id',
+            'mal_id',
+            'thetvdb_id',
+            'imdb_id',
+            'anisearch_id',
+            'themoviedb_id',
+            'kitsu_id',
+            'notify.moe_id',
+            'simkl_id',
+            'livechart_id',
+            'anime-planet_id',
+            'anidb_id',
+            'animecountdown_id'
+        ];
 
-        // Check if ID is provided
-        if (!anilist_id && !mal_id) {
-            return res.status(400).json({ error: 'Missing anilist_id or mal_id parameter' });
+        // Find which ID is present in the request query
+        let searchIdKey = null;
+        let searchIdValue = null;
+
+        for (const key of supportedIds) {
+            if (req.query[key]) {
+                searchIdKey = key;
+                searchIdValue = req.query[key];
+                break; // Use the first valid ID found
+            }
+        }
+
+        // Check if ANY ID is provided
+        if (!searchIdKey) {
+            return res.status(400).json({ error: `Missing valid ID parameter. Supported: ${supportedIds.join(', ')}` });
         }
 
         // 2. Fetch the large JSON from GitHub (Cache logic)
@@ -143,12 +170,9 @@ export default async function handler(req, res) {
         // 3. Find the matching item
         let result = null;
 
-        if (anilist_id) {
-            // Compare as strings or numbers safely
-            result = cachedList.find(item => item.anilist_id == anilist_id);
-        } else if (mal_id) {
-            result = cachedList.find(item => item.mal_id == mal_id);
-        }
+        // General search using the found key
+        // We use loose equality (==) to handle string vs number differences (e.g. "21" vs 21)
+        result = cachedList.find(item => item[searchIdKey] == searchIdValue);
 
         // 4. Cache Config (Important for speed!)
         // Cache for 1 day (86400 seconds)
