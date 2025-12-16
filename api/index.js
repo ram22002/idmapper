@@ -149,6 +149,11 @@ export default async function handler(req, res) {
         } else if (mal_id) {
             result = cachedList.find(item => item.mal_id == mal_id);
         }
+        else if (simkl_id) {
+            result = cachedList.find(item => item.simkl_id == simkl_id);
+        }else if (imdb_id) {
+            result = cachedList.find(item => item.imdb_id == imdb_id);
+        }
 
         // 4. Cache Config (Important for speed!)
         // Cache for 1 day (86400 seconds)
