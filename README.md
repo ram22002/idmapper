@@ -1,4 +1,4 @@
-# Dantotsu Mapper
+# Anime Mapper
 
 A high-performance Serverless API designed to map anime IDs across various platforms (AniList, MyAnimeList, Kitsu, TVDB, IMDB, and more).
 
