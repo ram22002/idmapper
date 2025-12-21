@@ -30,6 +30,7 @@ let stats = {
 };
 
 export default async function handler(req, res) {
+    console.log("Handler invoked (FS-aware version)");
     const url = new URL(req.url, `http://${req.headers.host}`);
 
     // --- STATUS ROUTE ---
@@ -113,7 +114,7 @@ export default async function handler(req, res) {
     }
 
     // 1. The huge file URL
-    const EXTERNAL_URL = 'https://cdn.jsdelivr.net/gh/Fribb/anime-lists@master/anime-list-full.json';
+    const EXTERNAL_URL = 'https://cdn.jsdelivr.net/gh/ram22002/idmapper@main/public/anime-list-full.json';
 
     try {
         // List of supported IDs to search by
@@ -151,20 +152,45 @@ export default async function handler(req, res) {
         }
 
         // 2. Fetch the large JSON from GitHub (Cache logic)
+        // 2. Fetch the large JSON (Local FS -> GitHub Cache)
         const nowFetch = Date.now();
         if (!cachedList || (nowFetch - lastFetchTime > CACHE_DURATION)) {
-            console.log('Fetching new data list...');
-            const response = await fetch(EXTERNAL_URL);
-            if (!response.ok) throw new Error('Failed to download list');
+            let loaded = false;
 
-            cachedList = await response.json();
+            // Try Local File System first (Best for Local Dev & if bundled)
+            try {
+                const fs = await import('fs');
+                const path = await import('path');
+                const localPath = path.join(process.cwd(), 'public', 'anime-list-full.json');
+
+                if (fs.existsSync(localPath)) {
+                    console.log('Loading data from local file...');
+                    const fileContent = await fs.promises.readFile(localPath, 'utf-8');
+                    cachedList = JSON.parse(fileContent);
+                    loaded = true;
+                    console.log('Data list updated from Local FS.');
+                }
+            } catch (err) {
+                console.warn('Local file read failed, falling back to fetch:', err.message);
+            }
+
+            // Fallback to Remote Fetch
+            if (!loaded) {
+                console.log('Fetching new data list from remote...');
+                const response = await fetch(EXTERNAL_URL);
+                if (!response.ok) throw new Error('Failed to download list: ' + response.statusText);
+
+                cachedList = await response.json();
+                console.log('Data list updated from Remote.');
+            }
+
             lastFetchTime = nowFetch;
 
+            // Stats update
             stats.jsonDownloads++;
             if (redis) {
                 redis.incr('json_downloads');
             }
-            console.log('Data list updated.');
         }
 
         // 3. Find the matching item

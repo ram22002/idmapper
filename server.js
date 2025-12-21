@@ -75,5 +75,6 @@ const PORT = 3000;
 server.listen(PORT, () => {
     console.log(`✅ Server running at http://localhost:${PORT}`);
     console.log(`📌 Mapper API: http://localhost:${PORT}/api/mapper?anilist_id=1`);
+    console.log(`📂 Mappings File: http://localhost:${PORT}/mappings.json`);
     console.log(`📊 Status Page: http://localhost:${PORT}/`);
 });
