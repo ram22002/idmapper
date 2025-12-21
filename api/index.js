@@ -113,8 +113,8 @@ export default async function handler(req, res) {
         }
     }
 
-    // 1. The huge file URL
-    const EXTERNAL_URL = 'https://cdn.jsdelivr.net/gh/ram22002/idmapper@main/public/anime-list-full.json';
+    // 1. The huge file URL (Self-Hosted Master File)
+    const EXTERNAL_URL = 'https://cdn.jsdelivr.net/gh/ram22002/idmapper@main/public/master_anime.json';
 
     try {
         // List of supported IDs to search by
@@ -161,14 +161,14 @@ export default async function handler(req, res) {
             try {
                 const fs = await import('fs');
                 const path = await import('path');
-                const localPath = path.join(process.cwd(), 'public', 'anime-list-full.json');
+                const localPath = path.join(process.cwd(), 'public', 'master_anime.json');
 
                 if (fs.existsSync(localPath)) {
-                    console.log('Loading data from local file...');
+                    console.log('Loading data from local MASTER file...');
                     const fileContent = await fs.promises.readFile(localPath, 'utf-8');
                     cachedList = JSON.parse(fileContent);
                     loaded = true;
-                    console.log('Data list updated from Local FS.');
+                    console.log('Data list updated from Local FS (MASTER).');
                 }
             } catch (err) {
                 console.warn('Local file read failed, falling back to fetch:', err.message);

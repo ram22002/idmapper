@@ -76,5 +76,6 @@ server.listen(PORT, () => {
     console.log(`✅ Server running at http://localhost:${PORT}`);
     console.log(`📌 Mapper API: http://localhost:${PORT}/api/mapper?anilist_id=1`);
     console.log(`📂 Mappings File: http://localhost:${PORT}/mappings.json`);
+    console.log(`📂 Master File: http://localhost:${PORT}/master_anime.json`);
     console.log(`📊 Status Page: http://localhost:${PORT}/`);
 });

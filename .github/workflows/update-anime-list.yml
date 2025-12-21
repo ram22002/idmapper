@@ -6,9 +6,14 @@ on:
     - cron: '0 */6 * * *'
   workflow_dispatch: # Allow manual trigger
 
+  concurrency:
+    group: update-anime-list
+    cancel-in-progress: true
+
 jobs:
   update-anime-list:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     
     steps:
       - name: Checkout repository
@@ -31,7 +36,7 @@ jobs:
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git add public/anime-list-full.json public/mappings.json
+          git add public/anime-list-full.json public/mappings.json public/master_anime.json
           if git diff --staged --quiet; then
             echo "No changes to commit"
           else
