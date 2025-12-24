@@ -5,7 +5,7 @@ import { fileURLToPath } from 'url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
-const ANIMELIST_URL = 'https://cdn.jsdelivr.net/gh/Fribb/anime-lists@master/anime-list-full.json';
+const ANIMELIST_URL = 'https://raw.githubusercontent.com/Fribb/anime-lists/master/anime-list-full.json';
 const MAPPINGS_URL = 'https://raw.githubusercontent.com/eliasbenb/PlexAniBridge-Mappings/master/mappings.json';
 
 const ANIMELIST_FILE = path.join(__dirname, '../public/anime-list-full.json');
