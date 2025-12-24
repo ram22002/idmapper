@@ -198,7 +198,13 @@ export default async function handler(req, res) {
 
         // General search using the found key
         // We use loose equality (==) to handle string vs number differences (e.g. "21" vs 21)
-        result = cachedList.find(item => item[searchIdKey] == searchIdValue);
+        result = cachedList.find(item => {
+            const val = item[searchIdKey];
+            if (Array.isArray(val)) {
+                return val.some(v => v == searchIdValue);
+            }
+            return val == searchIdValue;
+        });
 
         // 4. Cache Config (Important for speed!)
         // Cache for 1 day (86400 seconds)
