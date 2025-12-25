@@ -114,7 +114,8 @@ export default async function handler(req, res) {
     }
 
     // 1. The huge file URL (Self-Hosted Master File)
-    const EXTERNAL_URL = 'https://cdn.jsdelivr.net/gh/ram22002/idmapper@main/public/master_anime.json';
+    // 1. The huge file URL (Self-Hosted Master File)
+    const EXTERNAL_URL = 'https://cdn.jsdelivr.net/gh/Ramregar97/idmapper@main/public/master_anime.json';
 
     try {
         // List of supported IDs to search by
@@ -164,11 +165,11 @@ export default async function handler(req, res) {
                 const localPath = path.join(process.cwd(), 'public', 'master_anime.json');
 
                 if (fs.existsSync(localPath)) {
-                    console.log('Loading data from local MASTER file...');
+                    console.log(`Loading data from local MASTER file at: ${localPath}`);
                     const fileContent = await fs.promises.readFile(localPath, 'utf-8');
                     cachedList = JSON.parse(fileContent);
                     loaded = true;
-                    console.log('Data list updated from Local FS (MASTER).');
+                    console.log(`Data list updated from Local FS. Loaded ${cachedList.length} entries.`);
                 }
             } catch (err) {
                 console.warn('Local file read failed, falling back to fetch:', err.message);
@@ -181,7 +182,7 @@ export default async function handler(req, res) {
                 if (!response.ok) throw new Error('Failed to download list: ' + response.statusText);
 
                 cachedList = await response.json();
-                console.log('Data list updated from Remote.');
+                console.log(`Data list updated from Remote. Loaded ${cachedList.length} entries.`);
             }
 
             lastFetchTime = nowFetch;
