@@ -1,0 +1,22 @@
+name: Sync to Hugging Face Hub
+
+on:
+  push:
+    branches: [main]  # triggers on every commit to main branch
+  workflow_dispatch:  # allows manual click to run
+
+jobs:
+  sync-to-hub:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          lfs: true
+      
+      - name: Push to hub
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        # I used your HF username 'Ramregar97' below.
+        # Make sure your Space is named 'idmapper'.
+        run: git push https://Ramregar97:$HF_TOKEN@huggingface.co/spaces/Ramregar97/idmapper main

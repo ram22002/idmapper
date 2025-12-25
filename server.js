@@ -71,7 +71,7 @@ const server = http.createServer(async (req, res) => {
     }
 });
 
-const PORT = 3000;
+const PORT = process.env.PORT || 7860;
 server.listen(PORT, () => {
     console.log(`✅ Server running at http://localhost:${PORT}`);
     console.log(`📌 Mapper API: http://localhost:${PORT}/api/mapper?anilist_id=1`);
