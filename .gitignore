@@ -9,3 +9,4 @@ build/
 .env*.local
 anime-lists/
 .gemini
+.test_search.js

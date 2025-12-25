@@ -155,8 +155,9 @@ export default async function handler(req, res) {
         // 2. Fetch the large JSON from GitHub (Cache logic)
         // 2. Fetch the large JSON (Local FS -> GitHub Cache)
         const nowFetch = Date.now();
-        if (!cachedList || (nowFetch - lastFetchTime > CACHE_DURATION)) {
+        if (!cachedList || cachedList.length === 0 || (nowFetch - lastFetchTime > CACHE_DURATION)) {
             let loaded = false;
+            console.log(`Debug cache check: List=${cachedList ? cachedList.length : 'null'}, TimeDiff=${nowFetch - lastFetchTime}`);
 
             // Try Local File System first (Best for Local Dev & if bundled)
             try {

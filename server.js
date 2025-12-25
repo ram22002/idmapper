@@ -79,4 +79,5 @@ server.listen(PORT, '0.0.0.0', () => {
     console.log(`📂 Master File: http://localhost:${PORT}/master_anime.json`);
     console.log(`📊 Status Page: http://localhost:${PORT}/`);
     console.log(`   (Listening on 0.0.0.0:${PORT})`);
+    console.log(`🚀 DEPLOYMENT VERSION: 1.1 - ${new Date().toISOString()}`);
 });
