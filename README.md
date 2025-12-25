@@ -45,9 +45,19 @@ Search by any of the following ID types:
 
 ### Examples
 
+### Base URLs
+- **Vercel (Serverless)**: `https://idmapper.vercel.app/api/mapper`
+- **Hugging Face (Docker)**: `https://ramregar97-idmapper.hf.space/api/mapper`
+
+### Examples
+
 #### Get anime by AniList ID
 ```http
+// Vercel
 GET https://idmapper.vercel.app/api/mapper?anilist_id=21
+
+// Hugging Face
+GET https://ramregar97-idmapper.hf.space/api/mapper?anilist_id=21
 ```
 
 #### Get anime by MyAnimeList ID
@@ -157,7 +167,7 @@ The API returns a comprehensive set of IDs for the matched anime.
 ```
 
 ## 📊 Status Page
-**[Status](https://idmapper.vercel.app/)**
+**[Status](https://ramregar97-idmapper.hf.space/)**
 
 Visit the Status Dashboard to view:
 - **System Status**: Real-time operational status.
