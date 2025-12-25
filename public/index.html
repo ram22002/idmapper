@@ -157,12 +157,10 @@
 
         /* API Documentation Section */
         .doc-container {
-            display: none;
-            /* Hidden by default */
+            display: flex;
             flex-direction: column;
             gap: 12px;
             margin-top: 16px;
-            animation: fadeIn 0.3s ease-out;
         }
 
         @keyframes fadeIn {
@@ -225,9 +223,6 @@
         <!-- Header -->
         <div class="header">
             <h1 class="title">Anime ID Mapper API</h1>
-            <button class="icon-btn" id="help-btn" title="Toggle Documentation">
-                <span class="material-symbols-outlined">help</span>
-            </button>
         </div>
 
         <!-- System Status (Full Width) -->
@@ -242,43 +237,7 @@
             </div>
         </div>
 
-        <!-- Stats Grid -->
-        <div class="stats-grid">
-            <div class="card">
-                <div class="card-label">
-                    <span class="material-symbols-outlined"
-                        style="font-size: 18px; color: var(--md-sys-color-primary);">bar_chart</span>
-                    Total Requests
-                </div>
-                <div class="card-value" id="total-requests">-</div>
-            </div>
 
-            <div class="card">
-                <div class="card-label">
-                    <span class="material-symbols-outlined" style="font-size: 18px; color: #FFB74D;">today</span>
-                    Requests Today
-                </div>
-                <div class="card-value" id="requests-today">-</div>
-            </div>
-
-            <div class="card">
-                <div class="card-label">
-                    <span class="material-symbols-outlined"
-                        style="font-size: 18px; color: var(--md-sys-color-secondary);">cloud_download</span>
-                    JSON Downloads
-                </div>
-                <div class="card-value" id="json-downloads">-</div>
-            </div>
-
-            <div class="card">
-                <div class="card-label">
-                    <span class="material-symbols-outlined"
-                        style="font-size: 18px; color: var(--md-sys-color-tertiary);">schedule</span>
-                    Uptime
-                </div>
-                <div class="card-value" id="uptime">-</div>
-            </div>
-        </div>
 
         <!-- Documentation (Hidden by default) -->
         <div class="doc-container" id="doc-section">
@@ -302,59 +261,35 @@
                 </div>
                 <!-- User provided JSON -->
                 <div class="code-snippet" style="color: #AEC6FF;">{
-                    "thetvdb_id": 81797,
-                    "imdb_id": "tt0388629",
-                    "anisearch_id": 2227,
-                    "themoviedb_id": 37854,
-                    "kitsu_id": 12,
-                    "mal_id": 21,
-                    "type": "TV",
-                    "notify.moe_id": "jdZp5KmiR",
-                    "simkl_id": 38636,
-                    "anilist_id": 21,
-                    "livechart_id": 321,
-                    "anime-planet_id": "one-piece",
-                    "anidb_id": 69,
-                    "animecountdown_id": 38636
-                    }</div>
+  "thetvdb_id": 81797,
+  "imdb_id": [
+    "tt0388629",
+    "tt0975705",
+    "..."
+  ],
+  "anisearch_id": 2227,
+  "themoviedb_id": 37854,
+  "kitsu_id": 12,
+  "mal_id": [21, 1094, "..."],
+  "type": "TV",
+  "notify.moe_id": "jdZp5KmiR",
+  "simkl_id": 38636,
+  "anilist_id": 21,
+  "livechart_id": 321,
+  "anime-planet_id": "one-piece",
+  "anidb_id": 69,
+  "animecountdown_id": 38636,
+  "tmdb_mappings": { "s1": "e1-e61", "..." },
+  "tvdb_mappings": { "s1": "e1-e8", "..." }
+}</div>
             </div>
         </div>
 
     </div>
 
+
+
     <script>
-        // Toggle Logic
-        const helpBtn = document.getElementById('help-btn');
-        const docSection = document.getElementById('doc-section');
-
-        helpBtn.addEventListener('click', () => {
-            const isHidden = getComputedStyle(docSection).display === 'none';
-            docSection.style.display = isHidden ? 'flex' : 'none';
-            // Update icon style or state if needed
-            helpBtn.style.color = isHidden ? 'var(--md-sys-color-primary)' : 'var(--md-sys-color-on-surface-variant)';
-        });
-
-        // Live Uptime Logic
-        let serverStartTime = null;
-
-        function updateUptimeDisplay() {
-            if (!serverStartTime) return;
-
-            const now = Date.now();
-            const uptime = now - serverStartTime;
-
-            const seconds = Math.floor((uptime / 1000) % 60);
-            const minutes = Math.floor((uptime / (1000 * 60)) % 60);
-            const hours = Math.floor((uptime / (1000 * 60 * 60)) % 24);
-            const days = Math.floor((uptime / (1000 * 60 * 60 * 24)));
-
-            const timeString = `${days}d ${hours}h ${minutes}m ${seconds}s`;
-            document.getElementById('uptime').textContent = timeString;
-        }
-
-        // Start local ticker (updates every second)
-        setInterval(updateUptimeDisplay, 1000);
-
         // API Fetch Logic
         async function fetchStatus() {
             try {
@@ -372,19 +307,7 @@
                     statusDot.className = 'status-dot error';
                 }
 
-                // Numbers
-                document.getElementById('total-requests').textContent = data.total_requests;
-                document.getElementById('requests-today').textContent = data.requests_today;
-                document.getElementById('json-downloads').textContent = data.json_downloads;
 
-                // Set start time for local ticker
-                if (data.start_time) {
-                    serverStartTime = data.start_time;
-                    updateUptimeDisplay(); // Immediate update
-                } else {
-                    // Fallback if API hasn't updated yet or old version
-                    document.getElementById('uptime').textContent = data.uptime || '-';
-                }
 
             } catch (error) {
                 console.error('Error fetching status:', error);

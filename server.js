@@ -72,10 +72,11 @@ const server = http.createServer(async (req, res) => {
 });
 
 const PORT = process.env.PORT || 7860;
-server.listen(PORT, () => {
+server.listen(PORT, '0.0.0.0', () => {
     console.log(`✅ Server running at http://localhost:${PORT}`);
     console.log(`📌 Mapper API: http://localhost:${PORT}/api/mapper?anilist_id=1`);
     console.log(`📂 Mappings File: http://localhost:${PORT}/mappings.json`);
     console.log(`📂 Master File: http://localhost:${PORT}/master_anime.json`);
     console.log(`📊 Status Page: http://localhost:${PORT}/`);
+    console.log(`   (Listening on 0.0.0.0:${PORT})`);
 });
