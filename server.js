@@ -77,7 +77,8 @@ server.listen(PORT, '0.0.0.0', () => {
     console.log(`📌 Mapper API: http://localhost:${PORT}/api/mapper?anilist_id=1`);
     console.log(`📂 Mappings File: http://localhost:${PORT}/mappings.json`);
     console.log(`📂 Master File: http://localhost:${PORT}/master_anime.json`);
+    console.log(`📂 CWD: ${process.cwd()}`);
     console.log(`📊 Status Page: http://localhost:${PORT}/`);
     console.log(`   (Listening on 0.0.0.0:${PORT})`);
-    console.log(`🚀 DEPLOYMENT VERSION: 1.1 - ${new Date().toISOString()}`);
+    console.log(`🚀 DEPLOYMENT VERSION: 1.2 - ${new Date().toISOString()}`);
 });

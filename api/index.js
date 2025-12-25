@@ -1,5 +1,6 @@
 import 'dotenv/config';
-import { URL } from 'url';
+import { URL, fileURLToPath } from 'url';
+import path from 'path';
 // FORCE UPDATE VERCEL DEPLOYMENT
 import Redis from 'ioredis';
 
@@ -163,8 +164,9 @@ export default async function handler(req, res) {
             // Try Local File System first (Best for Local Dev & if bundled)
             try {
                 const fs = await import('fs');
-                const path = await import('path');
-                const localPath = path.join(process.cwd(), 'public', 'master_anime.json');
+                // Robust path resolution relative to this file (api/index.js)
+                const __dirname = path.dirname(fileURLToPath(import.meta.url));
+                const localPath = path.join(__dirname, '..', 'public', 'master_anime.json');
 
                 if (fs.existsSync(localPath)) {
                     console.log(`Loading data from local MASTER file at: ${localPath}`);
@@ -205,7 +207,8 @@ export default async function handler(req, res) {
                 cacheDuration: CACHE_DURATION,
                 externalUrl: EXTERNAL_URL,
                 cwd: process.cwd(),
-                localFileExists: (await import('fs')).existsSync((await import('path')).join(process.cwd(), 'public', 'master_anime.json'))
+                localPath: path.join(path.dirname(fileURLToPath(import.meta.url)), '..', 'public', 'master_anime.json'),
+                localFileExists: (await import('fs')).existsSync(path.join(path.dirname(fileURLToPath(import.meta.url)), '..', 'public', 'master_anime.json'))
             });
         }
 
