@@ -115,7 +115,8 @@ export default async function handler(req, res) {
 
     // 1. The huge file URL (Self-Hosted Master File)
     // 1. The huge file URL (Self-Hosted Master File)
-    const EXTERNAL_URL = 'https://cdn.jsdelivr.net/gh/Ramregar97/idmapper@main/public/master_anime.json';
+    // 1. The huge file URL (Self-Hosted Master File)
+    const EXTERNAL_URL = 'https://raw.githubusercontent.com/Ramregar97/idmapper/main/public/master_anime.json';
 
     try {
         // List of supported IDs to search by
@@ -148,7 +149,7 @@ export default async function handler(req, res) {
         }
 
         // Check if ANY ID is provided
-        if (!searchIdKey) {
+        if (!searchIdKey && !req.query.debug) {
             return res.status(400).json({ error: `Missing valid ID parameter. Supported: ${supportedIds.join(', ')}` });
         }
 
@@ -193,6 +194,19 @@ export default async function handler(req, res) {
             if (redis) {
                 redis.incr('json_downloads');
             }
+        }
+
+        // --- DEBUG ENDPOINT ---
+        if (req.query.debug) {
+            return res.json({
+                status: 'Debug Mode',
+                cachedListSize: cachedList ? cachedList.length : 0,
+                lastFetchTime: lastFetchTime,
+                cacheDuration: CACHE_DURATION,
+                externalUrl: EXTERNAL_URL,
+                cwd: process.cwd(),
+                localFileExists: (await import('fs')).existsSync((await import('path')).join(process.cwd(), 'public', 'master_anime.json'))
+            });
         }
 
         // 3. Find the matching item
