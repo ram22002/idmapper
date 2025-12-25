@@ -31,7 +31,7 @@ let stats = {
 };
 
 export default async function handler(req, res) {
-    console.log("Handler invoked (FS-aware version)");
+    // console.log("Handler invoked (FS-aware version)");
     const url = new URL(req.url, `http://${req.headers.host}`);
 
     // --- STATUS ROUTE ---
