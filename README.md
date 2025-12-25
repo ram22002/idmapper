@@ -1,3 +1,12 @@
+---
+title: Anime ID Mapper
+emoji: 🐰
+colorFrom: blue
+colorTo: purple
+sdk: docker
+pinned: false
+---
+
 # Anime Mapper
 
 A high-performance Serverless API designed to map anime IDs across various platforms (AniList, MyAnimeList, Kitsu, TVDB, IMDB, and more).
