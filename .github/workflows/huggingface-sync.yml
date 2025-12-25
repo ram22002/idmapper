@@ -19,4 +19,6 @@ jobs:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
         # I used your HF username 'Ramregar97' below.
         # Make sure your Space is named 'idmapper'.
-        run: git push --force https://Ramregar97:$HF_TOKEN@huggingface.co/spaces/Ramregar97/idmapper main
+        run: |
+          git remote add space https://Ramregar97:$HF_TOKEN@huggingface.co/spaces/Ramregar97/idmapper
+          git push --force space main
