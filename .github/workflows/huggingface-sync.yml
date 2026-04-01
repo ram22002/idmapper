@@ -22,3 +22,4 @@ jobs:
         run: |
           git remote add space https://Isagi2025:$HF_TOKEN@huggingface.co/spaces/Isagi2025/idmapper
           git push --force space main
+
