@@ -179526,8 +179526,8 @@
       "tmdb": 0
     },
     "episode_offset": {
-      "tvdb": 11,
-      "tmdb": 11
+      "tvdb": 10,
+      "tmdb": 10
     },
     "tmdb_mappings": {
       "s0": "e11"
@@ -250087,6 +250087,7 @@
         938567
       ]
     },
+    "tvdb_id": 337936,
     "season": {
       "tvdb": 0
     },
@@ -250094,7 +250095,6 @@
       "tvdb": 1
     },
     "tmdb_movie_id": 938567,
-    "tvdb_id": 337936,
     "tvdb_mappings": {
       "s0": "e2"
     }
@@ -280374,6 +280374,7 @@
     "animenewsnetwork_id": 32858,
     "anime-planet_id": "demon-slayer-kimetsu-no-yaiba-movie-infinity-castle-part-1",
     "anisearch_id": 19389,
+    "imdb_id": "tt32820897",
     "kitsu_id": 49001,
     "livechart_id": 12734,
     "mal_id": [
@@ -280381,7 +280382,18 @@
       62546
     ],
     "simkl_id": 2498112,
-    "imdb_id": "tt32820897",
+    "themoviedb_id": {
+      "movie": [
+        1311031
+      ]
+    },
+    "tvdb_id": 348545,
+    "season": {
+      "tvdb": 0
+    },
+    "episode_offset": {
+      "tvdb": 15
+    },
     "tmdb_movie_id": 1311031
   },
   {
@@ -283013,6 +283025,9 @@
     "animecountdown_id": 2577398,
     "anime-planet_id": "romelia-senki-hakushaku-reijou-maou-wo-taoshita-ato-mo-jinrui-yabasou-dakara-guntai-soshikisuru",
     "anisearch_id": 19585,
+    "imdb_id": [
+      "tt42727894"
+    ],
     "kitsu_id": 49196,
     "mal_id": 59787,
     "simkl_id": 2577398,
@@ -293752,6 +293767,9 @@
     "animenewsnetwork_id": 37912,
     "anime-planet_id": "super-psychic-policeman-chojo",
     "anisearch_id": 20985,
+    "imdb_id": [
+      "tt43691391"
+    ],
     "kitsu_id": 50261,
     "livechart_id": 13363,
     "mal_id": 62696,
@@ -296259,6 +296277,9 @@
     "animenewsnetwork_id": 38387,
     "anime-planet_id": "nia-liston-the-merciless-maiden",
     "anisearch_id": 21199,
+    "imdb_id": [
+      "tt41296544"
+    ],
     "livechart_id": 13504,
     "mal_id": 63382,
     "simkl_id": 3007186,
