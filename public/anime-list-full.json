@@ -12249,7 +12249,7 @@
     "themoviedb_id": {
       "tv": 46373
     },
-    "tvdb_id": 199551,
+    "tvdb_id": 475678,
     "season": {
       "tvdb": 1,
       "tmdb": 1
@@ -30191,6 +30191,9 @@
     "animenewsnetwork_id": 2652,
     "anime-planet_id": "moekan",
     "anisearch_id": 1103,
+    "imdb_id": [
+      "tt33051236"
+    ],
     "kitsu_id": 580,
     "livechart_id": 6484,
     "mal_id": 625,
@@ -38683,6 +38686,9 @@
     "animenewsnetwork_id": 753,
     "anime-planet_id": "tattoon-master",
     "anisearch_id": 124,
+    "imdb_id": [
+      "tt3682068"
+    ],
     "kitsu_id": 1901,
     "livechart_id": 8815,
     "mal_id": 2102,
@@ -73442,7 +73448,7 @@
     "anime-planet_id": "elf-17",
     "anisearch_id": 4114,
     "imdb_id": [
-      ""
+      "tt5162492"
     ],
     "kitsu_id": 5673,
     "livechart_id": 7764,
@@ -82271,9 +82277,17 @@
     "animenewsnetwork_id": 7321,
     "anime-planet_id": "phantom-yuusha-densetsu",
     "anisearch_id": 4822,
+    "imdb_id": [
+      "tt7143948"
+    ],
     "kitsu_id": 6195,
     "mal_id": 10466,
-    "simkl_id": 36067
+    "simkl_id": 36067,
+    "themoviedb_id": {
+      "movie": [
+        443269
+      ]
+    }
   },
   {
     "anidb_id": 5829
@@ -94404,8 +94418,7 @@
     "anime-planet_id": "chinkoroheibei-tamatebako",
     "anisearch_id": 9770,
     "imdb_id": [
-      "tt0418858",
-      ""
+      "tt0418858"
     ],
     "kitsu_id": 6818,
     "livechart_id": 6726,
@@ -100797,9 +100810,17 @@
     "animenewsnetwork_id": 2493,
     "anime-planet_id": "my-son-goku",
     "anisearch_id": 5619,
+    "imdb_id": [
+      "tt21448334"
+    ],
     "kitsu_id": 8965,
     "mal_id": 20189,
-    "simkl_id": 1572127
+    "simkl_id": 1572127,
+    "themoviedb_id": {
+      "movie": [
+        391643
+      ]
+    }
   },
   {
     "type": "SPECIAL",
@@ -153472,10 +153493,18 @@
     "animenewsnetwork_id": 18492,
     "anime-planet_id": "kacchikenee",
     "anisearch_id": 10802,
+    "imdb_id": [
+      "tt17518332"
+    ],
     "kitsu_id": 11250,
     "livechart_id": 1649,
     "mal_id": 30921,
-    "simkl_id": 501646
+    "simkl_id": 501646,
+    "themoviedb_id": {
+      "movie": [
+        433510
+      ]
+    }
   },
   {
     "type": "MOVIE",
@@ -164373,7 +164402,13 @@
     "anisearch_id": 11332,
     "kitsu_id": 12434,
     "mal_id": 33086,
-    "simkl_id": 573418
+    "simkl_id": 573418,
+    "themoviedb_id": {
+      "tv": 241888
+    },
+    "season": {
+      "tmdb": 1
+    }
   },
   {
     "type": "TV",
@@ -176194,7 +176229,7 @@
     "anime-planet_id": "its-a-rumic-world-50th-anniversary-weekly-shonen-sunday",
     "anisearch_id": 8809,
     "imdb_id": [
-      ""
+      "tt12396506"
     ],
     "kitsu_id": 4612,
     "mal_id": 6566,
@@ -200747,9 +200782,20 @@
     "animecountdown_id": 1055023,
     "anime-planet_id": "mebius-dust",
     "anisearch_id": 15978,
+    "imdb_id": [
+      "tt43587102"
+    ],
     "kitsu_id": 42337,
     "livechart_id": 9260,
-    "simkl_id": 1055023
+    "simkl_id": 1055023,
+    "themoviedb_id": {
+      "tv": 98865
+    },
+    "tvdb_id": 475980,
+    "season": {
+      "tvdb": 1,
+      "tmdb": 1
+    }
   },
   {
     "type": "MOVIE",
@@ -256276,10 +256322,18 @@
     "animenewsnetwork_id": 34230,
     "anime-planet_id": "scarlet",
     "anisearch_id": 20000,
+    "imdb_id": [
+      "tt35114460"
+    ],
     "kitsu_id": 49438,
     "livechart_id": 12992,
     "mal_id": 60610,
-    "simkl_id": 2668360
+    "simkl_id": 2668360,
+    "themoviedb_id": {
+      "movie": [
+        1406657
+      ]
+    }
   },
   {
     "type": "TV",
@@ -257224,6 +257278,9 @@
     "animecountdown_id": 2716150,
     "anime-planet_id": "the-kept-man-of-the-princess-knight",
     "anisearch_id": 20182,
+    "imdb_id": [
+      "tt43691490"
+    ],
     "kitsu_id": 49566,
     "livechart_id": 13042,
     "mal_id": 61015,
@@ -261599,10 +261656,22 @@
     "animenewsnetwork_id": 37416,
     "anime-planet_id": "one-piece-heroines",
     "anisearch_id": 20817,
+    "imdb_id": [
+      "tt41295042"
+    ],
     "kitsu_id": 50089,
     "livechart_id": 13271,
     "mal_id": 62233,
-    "simkl_id": 2858432
+    "simkl_id": 2858432,
+    "themoviedb_id": {
+      "movie": [
+        1659389
+      ]
+    },
+    "tvdb_id": 466748,
+    "season": {
+      "tvdb": 1
+    }
   },
   {
     "type": "ONA",
@@ -264740,10 +264809,18 @@
     "animenewsnetwork_id": 38105,
     "anime-planet_id": "milkysubway-the-galactic-limited-express-movie",
     "anisearch_id": 21094,
+    "imdb_id": [
+      "tt39228706"
+    ],
     "kitsu_id": 50537,
     "livechart_id": 13325,
     "mal_id": 62518,
-    "simkl_id": 2982894
+    "simkl_id": 2982894,
+    "themoviedb_id": {
+      "movie": [
+        1598785
+      ]
+    }
   },
   {
     "type": "ONA",
@@ -267392,7 +267469,18 @@
   },
   {
     "type": "TV",
-    "anidb_id": 20145
+    "anidb_id": 20145,
+    "imdb_id": [
+      "tt32550889"
+    ],
+    "themoviedb_id": {
+      "tv": 196950
+    },
+    "tvdb_id": 418666,
+    "season": {
+      "tvdb": 2,
+      "tmdb": 2
+    }
   },
   {
     "type": "TV",
@@ -267495,7 +267583,43 @@
   },
   {
     "type": "TV",
-    "anidb_id": 20168
+    "anidb_id": 20168,
+    "imdb_id": [
+      "tt39123061"
+    ],
+    "themoviedb_id": {
+      "tv": 283428
+    },
+    "tvdb_id": 459627,
+    "season": {
+      "tvdb": 2,
+      "tmdb": 2
+    }
+  },
+  {
+    "anidb_id": 20180,
+    "imdb_id": [
+      "tt41358179"
+    ],
+    "themoviedb_id": {
+      "tv": 326191
+    },
+    "tvdb_id": 476227,
+    "season": {
+      "tvdb": 1,
+      "tmdb": 1
+    }
+  },
+  {
+    "anidb_id": 20203,
+    "themoviedb_id": {
+      "tv": 329161
+    },
+    "tvdb_id": 480480,
+    "season": {
+      "tvdb": 1,
+      "tmdb": 1
+    }
   },
   {
     "type": "SPECIAL",
