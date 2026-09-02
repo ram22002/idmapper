@@ -19918,7 +19918,7 @@
     "anime-planet_id": "salaryman-kintaro",
     "anisearch_id": 3459,
     "imdb_id": [
-      "tt0304664"
+      ""
     ],
     "kitsu_id": 1447,
     "livechart_id": 8433,
@@ -23499,6 +23499,9 @@
     "animenewsnetwork_id": 2931,
     "anime-planet_id": "massugu-ni-ikou",
     "anisearch_id": 1419,
+    "imdb_id": [
+      "tt21319174"
+    ],
     "kitsu_id": 1452,
     "livechart_id": 7593,
     "mal_id": 1617,
@@ -45666,7 +45669,7 @@
     "anime-planet_id": "manga-aesop-monogatari",
     "anisearch_id": 3191,
     "imdb_id": [
-      ""
+      "tt31458061"
     ],
     "kitsu_id": 2842,
     "mal_id": 3180,
@@ -46848,6 +46851,9 @@
     "animecountdown_id": 41003,
     "anime-planet_id": "massugu-ni-ikou-2004",
     "anisearch_id": 1975,
+    "imdb_id": [
+      "tt21319174"
+    ],
     "kitsu_id": 2843,
     "livechart_id": 11284,
     "mal_id": 3182,
@@ -125929,6 +125935,9 @@
     "animenewsnetwork_id": 12449,
     "anime-planet_id": "honto-ni-atta-reibai-sensei",
     "anisearch_id": 6875,
+    "imdb_id": [
+      "tt3207762"
+    ],
     "kitsu_id": 6135,
     "livechart_id": 1529,
     "mal_id": 10338,
@@ -190064,7 +190073,6 @@
     "animecountdown_id": 626753,
     "anime-planet_id": "shelter",
     "anisearch_id": 11871,
-    "imdb_id": "tt6443118",
     "kitsu_id": 12668,
     "livechart_id": 2372,
     "mal_id": 34240,
@@ -190074,6 +190082,7 @@
         763762
       ]
     },
+    "imdb_id": "tt6443118",
     "tmdb_movie_id": 763762
   },
   {
@@ -297103,6 +297112,9 @@
     "animenewsnetwork_id": 38667,
     "anime-planet_id": "junket-bank",
     "anisearch_id": 21307,
+    "imdb_id": [
+      "tt41295770"
+    ],
     "kitsu_id": 50587,
     "livechart_id": 13549,
     "mal_id": 63713,
