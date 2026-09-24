@@ -2466,9 +2466,17 @@
     "animenewsnetwork_id": 2147,
     "anime-planet_id": "nakoruru",
     "anisearch_id": 1363,
+    "imdb_id": [
+      "tt0475108"
+    ],
     "kitsu_id": 1746,
     "mal_id": 1937,
-    "simkl_id": 36899
+    "simkl_id": 36899,
+    "themoviedb_id": {
+      "movie": [
+        404616
+      ]
+    }
   },
   {
     "type": "OVA",
@@ -4831,10 +4839,18 @@
     "animenewsnetwork_id": 822,
     "anime-planet_id": "fatal-fury-legend-of-the-hungry-wolf",
     "anisearch_id": 2350,
+    "imdb_id": [
+      "tt0221169"
+    ],
     "kitsu_id": 1619,
     "livechart_id": 8749,
     "mal_id": 1799,
-    "simkl_id": 37782
+    "simkl_id": 37782,
+    "themoviedb_id": {
+      "movie": [
+        72015
+      ]
+    }
   },
   {
     "type": "TV",
@@ -15765,10 +15781,18 @@
     "animenewsnetwork_id": 3287,
     "anime-planet_id": "kaitei-choutokkyuu-marine-express",
     "anisearch_id": 1984,
+    "imdb_id": [
+      "tt2833226"
+    ],
     "kitsu_id": 2839,
     "livechart_id": 6559,
     "mal_id": 3175,
-    "simkl_id": 40188
+    "simkl_id": 40188,
+    "themoviedb_id": {
+      "movie": [
+        266566
+      ]
+    }
   },
   {
     "type": "TV",
@@ -18033,10 +18057,21 @@
     "animenewsnetwork_id": 825,
     "anime-planet_id": "dragon-century",
     "anisearch_id": 1754,
+    "imdb_id": [
+      "tt0159714"
+    ],
     "kitsu_id": 3555,
     "livechart_id": 11841,
     "mal_id": 4318,
-    "simkl_id": 39769
+    "simkl_id": 39769,
+    "themoviedb_id": {
+      "tv": 44022
+    },
+    "tvdb_id": 423322,
+    "season": {
+      "tvdb": 1,
+      "tmdb": 1
+    }
   },
   {
     "type": "OVA",
@@ -21768,9 +21803,17 @@
     "animenewsnetwork_id": 3245,
     "anime-planet_id": "first-kiss-story",
     "anisearch_id": 1875,
+    "imdb_id": [
+      "tt28495437"
+    ],
     "kitsu_id": 654,
     "mal_id": 725,
-    "simkl_id": 37866
+    "simkl_id": 37866,
+    "themoviedb_id": {
+      "movie": [
+        960466
+      ]
+    }
   },
   {
     "type": "TV",
@@ -24795,10 +24838,18 @@
     "animenewsnetwork_id": 3248,
     "anime-planet_id": "tenbatsu-angel-rabbie",
     "anisearch_id": 1647,
+    "imdb_id": [
+      "tt3624622"
+    ],
     "kitsu_id": 622,
     "livechart_id": 10536,
     "mal_id": 681,
-    "simkl_id": 41083
+    "simkl_id": 41083,
+    "themoviedb_id": {
+      "movie": [
+        634622
+      ]
+    }
   },
   {
     "anidb_id": 1278
@@ -28932,10 +28983,21 @@
     "animenewsnetwork_id": 84,
     "anime-planet_id": "sohryuden-legend-of-the-dragon-kings",
     "anisearch_id": 880,
+    "imdb_id": [
+      "tt0292846"
+    ],
     "kitsu_id": 1562,
     "livechart_id": 7483,
     "mal_id": 1742,
-    "simkl_id": 41146
+    "simkl_id": 41146,
+    "themoviedb_id": {
+      "tv": 46253
+    },
+    "tvdb_id": 300804,
+    "season": {
+      "tvdb": 1,
+      "tmdb": 1
+    }
   },
   {
     "type": "OVA",
@@ -29901,7 +29963,11 @@
     "anisearch_id": 3267,
     "kitsu_id": 1209,
     "mal_id": 1355,
-    "simkl_id": 37949
+    "simkl_id": 37949,
+    "tvdb_id": 401698,
+    "season": {
+      "tvdb": 1
+    }
   },
   {
     "type": "OVA",
@@ -31532,9 +31598,17 @@
     "animenewsnetwork_id": 339,
     "anime-planet_id": "space-travelers",
     "anisearch_id": 3515,
+    "imdb_id": [
+      "tt2961122"
+    ],
     "kitsu_id": 3271,
     "mal_id": 3817,
-    "simkl_id": 36970
+    "simkl_id": 36970,
+    "themoviedb_id": {
+      "movie": [
+        441707
+      ]
+    }
   },
   {
     "type": "TV",
@@ -32255,9 +32329,17 @@
     "animenewsnetwork_id": 782,
     "anime-planet_id": "locke-the-superman-new-world-command",
     "anisearch_id": 3221,
+    "imdb_id": [
+      ""
+    ],
     "kitsu_id": 3667,
     "mal_id": 4534,
-    "simkl_id": 39036
+    "simkl_id": 39036,
+    "themoviedb_id": {
+      "movie": [
+        974593
+      ]
+    }
   },
   {
     "type": "OVA",
@@ -34480,7 +34562,7 @@
     "themoviedb_id": {
       "tv": 116331
     },
-    "tvdb_id": 176309
+    "tvdb_id": 458269
   },
   {
     "type": "TV",
@@ -36008,9 +36090,17 @@
     "animenewsnetwork_id": 5722,
     "anime-planet_id": "generation-of-chaos-next",
     "anisearch_id": 1667,
+    "imdb_id": [
+      "tt15724262"
+    ],
     "kitsu_id": 2533,
     "mal_id": 2777,
-    "simkl_id": 39817
+    "simkl_id": 39817,
+    "themoviedb_id": {
+      "movie": [
+        1126318
+      ]
+    }
   },
   {
     "type": "TV",
@@ -38184,10 +38274,18 @@
     "animenewsnetwork_id": 823,
     "anime-planet_id": "fatal-fury-2-the-new-battle",
     "anisearch_id": 917,
+    "imdb_id": [
+      "tt0220454"
+    ],
     "kitsu_id": 1620,
     "livechart_id": 8750,
     "mal_id": 1800,
-    "simkl_id": 41136
+    "simkl_id": 41136,
+    "themoviedb_id": {
+      "movie": [
+        72016
+      ]
+    }
   },
   {
     "type": "OVA",
@@ -41801,7 +41899,15 @@
     "kitsu_id": 2292,
     "livechart_id": 6148,
     "mal_id": 2527,
-    "simkl_id": 995939
+    "simkl_id": 995939,
+    "themoviedb_id": {
+      "tv": 116244
+    },
+    "tvdb_id": 271256,
+    "season": {
+      "tvdb": 1,
+      "tmdb": 1
+    }
   },
   {
     "type": "TV",
@@ -42940,7 +43046,15 @@
     "animenewsnetwork_id": 5064,
     "anime-planet_id": "end-of-the-world",
     "anisearch_id": 785,
-    "simkl_id": 39866
+    "imdb_id": [
+      "tt3914818"
+    ],
+    "simkl_id": 39866,
+    "themoviedb_id": {
+      "movie": [
+        365290
+      ]
+    }
   },
   {
     "type": "MOVIE",
@@ -43774,10 +43888,21 @@
     "animenewsnetwork_id": 698,
     "anime-planet_id": "mighty-space-miners",
     "anisearch_id": 2271,
+    "imdb_id": [
+      "tt0295495"
+    ],
     "kitsu_id": 1684,
     "livechart_id": 8791,
     "mal_id": 1867,
-    "simkl_id": 40721
+    "simkl_id": 40721,
+    "themoviedb_id": {
+      "tv": 75599
+    },
+    "tvdb_id": 393928,
+    "season": {
+      "tvdb": 1,
+      "tmdb": 1
+    }
   },
   {
     "type": "TV",
@@ -45171,7 +45296,15 @@
     "kitsu_id": 2092,
     "livechart_id": 6542,
     "mal_id": 2310,
-    "simkl_id": 40629
+    "simkl_id": 40629,
+    "themoviedb_id": {
+      "tv": 115867
+    },
+    "tvdb_id": 360817,
+    "season": {
+      "tvdb": 1,
+      "tmdb": 1
+    }
   },
   {
     "type": "TV",
@@ -45681,10 +45814,18 @@
     "animenewsnetwork_id": 816,
     "anime-planet_id": "dragons-heaven",
     "anisearch_id": 1075,
+    "imdb_id": [
+      "tt3629520"
+    ],
     "kitsu_id": 2817,
     "livechart_id": 6421,
     "mal_id": 3135,
-    "simkl_id": 41725
+    "simkl_id": 41725,
+    "themoviedb_id": {
+      "movie": [
+        166795
+      ]
+    }
   },
   {
     "type": "OVA",
@@ -46570,10 +46711,18 @@
     "animenewsnetwork_id": 1157,
     "anime-planet_id": "prefectural-earth-defense-force",
     "anisearch_id": 1268,
+    "imdb_id": [
+      "tt2439250"
+    ],
     "kitsu_id": 2198,
     "livechart_id": 7811,
     "mal_id": 2422,
-    "simkl_id": 41713
+    "simkl_id": 41713,
+    "themoviedb_id": {
+      "movie": [
+        247415
+      ]
+    }
   },
   {
     "type": "OVA",
@@ -47038,10 +47187,21 @@
     "animenewsnetwork_id": 7320,
     "anime-planet_id": "ozanari-dungeon",
     "anisearch_id": 845,
+    "imdb_id": [
+      "tt8922630"
+    ],
     "kitsu_id": 2764,
     "livechart_id": 8935,
     "mal_id": 3065,
-    "simkl_id": 40361
+    "simkl_id": 40361,
+    "themoviedb_id": {
+      "tv": 97455
+    },
+    "tvdb_id": 272305,
+    "season": {
+      "tvdb": 1,
+      "tmdb": 1
+    }
   },
   {
     "type": "OVA",
@@ -48226,12 +48386,18 @@
     "anime-planet_id": "rail-of-the-star",
     "anisearch_id": 365,
     "imdb_id": [
-      "tt1991145"
+      "tt1991145",
+      "tt3981582"
     ],
     "kitsu_id": 1186,
     "livechart_id": 9155,
     "mal_id": 1329,
-    "simkl_id": 37138
+    "simkl_id": 37138,
+    "themoviedb_id": {
+      "movie": [
+        56316
+      ]
+    }
   },
   {
     "type": "OVA",
@@ -48241,10 +48407,18 @@
     "animenewsnetwork_id": 331,
     "anime-planet_id": "the-tokyo-project",
     "anisearch_id": 676,
+    "imdb_id": [
+      "tt0420257"
+    ],
     "kitsu_id": 1803,
     "livechart_id": 8807,
     "mal_id": 2003,
-    "simkl_id": 38211
+    "simkl_id": 38211,
+    "themoviedb_id": {
+      "movie": [
+        193336
+      ]
+    }
   },
   {
     "type": "OVA",
@@ -49481,9 +49655,17 @@
     "animenewsnetwork_id": 3077,
     "anime-planet_id": "idol-fighter-su-chi-pai",
     "anisearch_id": 955,
+    "imdb_id": [
+      "tt1651881"
+    ],
     "kitsu_id": 3270,
     "mal_id": 3816,
-    "simkl_id": 39763
+    "simkl_id": 39763,
+    "themoviedb_id": {
+      "movie": [
+        448817
+      ]
+    }
   },
   {
     "type": "TV",
@@ -50611,10 +50793,18 @@
     "animenewsnetwork_id": 3251,
     "anime-planet_id": "desert-rose",
     "anisearch_id": 3226,
+    "imdb_id": [
+      "tt4297084"
+    ],
     "kitsu_id": 3397,
     "livechart_id": 8559,
     "mal_id": 3989,
-    "simkl_id": 39597
+    "simkl_id": 39597,
+    "themoviedb_id": {
+      "movie": [
+        284235
+      ]
+    }
   },
   {
     "type": "OVA",
@@ -51904,7 +52094,15 @@
     "animenewsnetwork_id": 5848,
     "anime-planet_id": "professor-dan-petory-s-blues",
     "anisearch_id": 1698,
-    "simkl_id": 39221
+    "imdb_id": [
+      "tt3914790"
+    ],
+    "simkl_id": 39221,
+    "themoviedb_id": {
+      "movie": [
+        365293
+      ]
+    }
   },
   {
     "type": "OVA",
@@ -52220,7 +52418,15 @@
     "animenewsnetwork_id": 5331,
     "anime-planet_id": "higan",
     "anisearch_id": 854,
-    "simkl_id": 38758
+    "imdb_id": [
+      "tt3916544"
+    ],
+    "simkl_id": 38758,
+    "themoviedb_id": {
+      "movie": [
+        365294
+      ]
+    }
   },
   {
     "type": "MOVIE",
@@ -53766,10 +53972,21 @@
     "animenewsnetwork_id": 5550,
     "anime-planet_id": "nekojiru-gekijou",
     "anisearch_id": 22,
+    "imdb_id": [
+      "tt8893624"
+    ],
     "kitsu_id": 950,
     "livechart_id": 8287,
     "mal_id": 1062,
-    "simkl_id": 37381
+    "simkl_id": 37381,
+    "themoviedb_id": {
+      "tv": 26769
+    },
+    "tvdb_id": 129611,
+    "season": {
+      "tvdb": 1,
+      "tmdb": 1
+    }
   },
   {
     "type": "TV",
@@ -54795,9 +55012,17 @@
     "animenewsnetwork_id": 6211,
     "anime-planet_id": "good-morning-althea",
     "anisearch_id": 3146,
+    "imdb_id": [
+      "tt16319210"
+    ],
     "kitsu_id": 2252,
     "mal_id": 2482,
-    "simkl_id": 36320
+    "simkl_id": 36320,
+    "themoviedb_id": {
+      "movie": [
+        166696
+      ]
+    }
   },
   {
     "type": "OVA",
@@ -55155,10 +55380,18 @@
     "animenewsnetwork_id": 1530,
     "anime-planet_id": "mahou-gakuen-lunar-aoi-ryuu-no-himitsu",
     "anisearch_id": 2286,
+    "imdb_id": [
+      "tt11857824"
+    ],
     "kitsu_id": 1791,
     "livechart_id": 8806,
     "mal_id": 1990,
-    "simkl_id": 38460
+    "simkl_id": 38460,
+    "themoviedb_id": {
+      "movie": [
+        849420
+      ]
+    }
   },
   {
     "type": "MOVIE",
@@ -55621,10 +55854,21 @@
     "animenewsnetwork_id": 6353,
     "anime-planet_id": "papa-to-kiss-in-the-dark",
     "anisearch_id": 1215,
+    "imdb_id": [
+      "tt9406726"
+    ],
     "kitsu_id": 668,
     "livechart_id": 4676,
     "mal_id": 746,
-    "simkl_id": 1571637
+    "simkl_id": 1571637,
+    "themoviedb_id": {
+      "tv": 81655
+    },
+    "tvdb_id": 271180,
+    "season": {
+      "tvdb": 1,
+      "tmdb": 1
+    }
   },
   {
     "anidb_id": 3404
@@ -56068,7 +56312,7 @@
     "anime-planet_id": "violence-jack-hells-wind",
     "anisearch_id": 1208,
     "imdb_id": [
-      "tt0265997"
+      "tt0265998"
     ],
     "kitsu_id": 1198,
     "livechart_id": 7699,
@@ -56076,7 +56320,7 @@
     "simkl_id": 37688,
     "themoviedb_id": {
       "movie": [
-        96650
+        96654
       ]
     }
   },
@@ -56338,10 +56582,21 @@
     "animenewsnetwork_id": 145,
     "anime-planet_id": "wild-knights-gulkeeva",
     "anisearch_id": 3452,
+    "imdb_id": [
+      "tt9173738"
+    ],
     "kitsu_id": 2793,
     "livechart_id": 7525,
     "mal_id": 3099,
-    "simkl_id": 37922
+    "simkl_id": 37922,
+    "themoviedb_id": {
+      "tv": 57144
+    },
+    "tvdb_id": 263266,
+    "season": {
+      "tvdb": 1,
+      "tmdb": 1
+    }
   },
   {
     "type": "OVA",
@@ -56971,10 +57226,21 @@
     "animenewsnetwork_id": 705,
     "anime-planet_id": "ogre-slayer",
     "anisearch_id": 2427,
+    "imdb_id": [
+      "tt0114030"
+    ],
     "kitsu_id": 3344,
     "livechart_id": 7100,
     "mal_id": 3913,
-    "simkl_id": 37152
+    "simkl_id": 37152,
+    "themoviedb_id": {
+      "tv": 45319
+    },
+    "tvdb_id": 290663,
+    "season": {
+      "tvdb": 1,
+      "tmdb": 1
+    }
   },
   {
     "type": "OVA",
@@ -61995,7 +62261,15 @@
     "kitsu_id": 2023,
     "livechart_id": 7714,
     "mal_id": 2232,
-    "simkl_id": 38202
+    "simkl_id": 38202,
+    "themoviedb_id": {
+      "tv": 43910
+    },
+    "tvdb_id": 333143,
+    "season": {
+      "tvdb": 1,
+      "tmdb": 1
+    }
   },
   {
     "type": "SPECIAL",
@@ -62919,9 +63193,20 @@
     "animenewsnetwork_id": 2301,
     "anime-planet_id": "salamander",
     "anisearch_id": 932,
+    "imdb_id": [
+      "tt7512516"
+    ],
     "kitsu_id": 1894,
     "mal_id": 2095,
-    "simkl_id": 41731
+    "simkl_id": 41731,
+    "themoviedb_id": {
+      "tv": 110909
+    },
+    "tvdb_id": 277355,
+    "season": {
+      "tvdb": 1,
+      "tmdb": 1
+    }
   },
   {
     "type": "OVA",
@@ -62931,10 +63216,18 @@
     "animenewsnetwork_id": 6272,
     "anime-planet_id": "tobira-wo-akete-1995",
     "anisearch_id": 3369,
+    "imdb_id": [
+      "tt2411932"
+    ],
     "kitsu_id": 1781,
     "livechart_id": 7586,
     "mal_id": 1979,
-    "simkl_id": 38837
+    "simkl_id": 38837,
+    "themoviedb_id": {
+      "movie": [
+        402023
+      ]
+    }
   },
   {
     "type": "OVA",
@@ -63304,10 +63597,18 @@
     "animenewsnetwork_id": 6352,
     "anime-planet_id": "pale-cocoon",
     "anisearch_id": 2992,
+    "imdb_id": [
+      "tt1506448"
+    ],
     "kitsu_id": 691,
     "livechart_id": 4130,
     "mal_id": 770,
-    "simkl_id": 40719
+    "simkl_id": 40719,
+    "themoviedb_id": {
+      "movie": [
+        20683
+      ]
+    }
   },
   {
     "type": "OVA",
@@ -65341,10 +65642,18 @@
     "animecountdown_id": 41001,
     "anime-planet_id": "kagami-no-genon",
     "anisearch_id": 3781,
+    "imdb_id": [
+      ""
+    ],
     "kitsu_id": 3460,
     "livechart_id": 6813,
     "mal_id": 4091,
-    "simkl_id": 41001
+    "simkl_id": 41001,
+    "themoviedb_id": {
+      "movie": [
+        220670
+      ]
+    }
   },
   {
     "type": "TV",
@@ -67053,10 +67362,18 @@
     "animenewsnetwork_id": 8067,
     "anime-planet_id": "alice",
     "anisearch_id": 4534,
+    "imdb_id": [
+      "tt0953999"
+    ],
     "kitsu_id": 3161,
     "livechart_id": 8986,
     "mal_id": 3640,
-    "simkl_id": 38322
+    "simkl_id": 38322,
+    "themoviedb_id": {
+      "movie": [
+        219031
+      ]
+    }
   },
   {
     "type": "ONA",
@@ -67220,9 +67537,20 @@
     "animenewsnetwork_id": 892,
     "anime-planet_id": "kizuoibito",
     "anisearch_id": 3704,
+    "imdb_id": [
+      "tt4145914"
+    ],
     "kitsu_id": 2763,
     "mal_id": 3064,
-    "simkl_id": 39394
+    "simkl_id": 39394,
+    "themoviedb_id": {
+      "tv": 44261
+    },
+    "tvdb_id": 270678,
+    "season": {
+      "tvdb": 1,
+      "tmdb": 1
+    }
   },
   {
     "type": "TV",
@@ -67906,7 +68234,12 @@
     "kitsu_id": 1456,
     "livechart_id": 9330,
     "mal_id": 1621,
-    "simkl_id": 36483
+    "simkl_id": 36483,
+    "themoviedb_id": {
+      "movie": [
+        409372
+      ]
+    }
   },
   {
     "type": "TV",
@@ -73224,9 +73557,17 @@
     "animenewsnetwork_id": 8456,
     "anime-planet_id": "afro-ken",
     "anisearch_id": 4038,
+    "imdb_id": [
+      "tt2610012"
+    ],
     "kitsu_id": 2552,
     "mal_id": 2796,
-    "simkl_id": 40555
+    "simkl_id": 40555,
+    "themoviedb_id": {
+      "movie": [
+        684583
+      ]
+    }
   },
   {
     "anidb_id": 4942
@@ -102933,7 +103274,9 @@
     "simkl_id": 36891,
     "themoviedb_id": {
       "movie": [
-        73529
+        73529,
+        73530,
+        122662
       ]
     }
   },
@@ -103889,7 +104232,8 @@
     "simkl_id": 36945,
     "themoviedb_id": {
       "movie": [
-        115969
+        115969,
+        239526
       ]
     }
   },
@@ -140493,9 +140837,16 @@
     "anisearch_id": 9268,
     "imdb_id": [
       "tt7230298",
-      "tt17007782"
+      "tt17007782",
+      ""
     ],
-    "simkl_id": 44624
+    "simkl_id": 44624,
+    "themoviedb_id": {
+      "movie": [
+        347182,
+        403896
+      ]
+    }
   },
   {
     "type": "TV",
@@ -151396,7 +151747,9 @@
     "simkl_id": 465242,
     "themoviedb_id": {
       "movie": [
-        344967
+        344967,
+        1545854,
+        459290
       ]
     }
   },
@@ -177682,7 +178035,9 @@
     "simkl_id": 669499,
     "themoviedb_id": {
       "movie": [
-        467169
+        467169,
+        550080,
+        843269
       ]
     }
   },
@@ -197611,7 +197966,8 @@
     "simkl_id": 919283,
     "themoviedb_id": {
       "movie": [
-        738091
+        738091,
+        823417
       ]
     }
   },
@@ -207391,10 +207747,22 @@
     "animenewsnetwork_id": 23072,
     "anime-planet_id": "given-movie",
     "anisearch_id": 14627,
+    "imdb_id": [
+      "tt11802992"
+    ],
     "kitsu_id": 42572,
     "livechart_id": 9604,
     "mal_id": 40421,
-    "simkl_id": 1170285
+    "simkl_id": 1170285,
+    "themoviedb_id": {
+      "movie": [
+        632632
+      ]
+    },
+    "tvdb_id": 361218,
+    "season": {
+      "tvdb": 0
+    }
   },
   {
     "type": "MOVIE",
@@ -221690,7 +222058,8 @@
     "simkl_id": 1582479,
     "themoviedb_id": {
       "movie": [
-        813707
+        813707,
+        968993
       ]
     }
   },
@@ -223269,10 +223638,24 @@
     "animenewsnetwork_id": 24386,
     "anime-planet_id": "given-on-the-other-hand",
     "anisearch_id": 16364,
+    "imdb_id": [
+      "tt10479420"
+    ],
     "kitsu_id": 44622,
     "livechart_id": 10607,
     "mal_id": 49053,
-    "simkl_id": 1649311
+    "simkl_id": 1649311,
+    "themoviedb_id": {
+      "tv": 88040
+    },
+    "tvdb_id": 361218,
+    "season": {
+      "tvdb": 0,
+      "tmdb": 0
+    },
+    "episode_offset": {
+      "tvdb": 3
+    }
   },
   {
     "type": "TV",
@@ -242542,10 +242925,27 @@
     "animenewsnetwork_id": 27565,
     "anime-planet_id": "given-movie-2-hiiragi-mix",
     "anisearch_id": 18300,
+    "imdb_id": [
+      "tt31257225",
+      "tt35631332"
+    ],
     "kitsu_id": 47209,
     "livechart_id": 11893,
     "mal_id": 54791,
-    "simkl_id": 2125448
+    "simkl_id": 2125448,
+    "themoviedb_id": {
+      "movie": [
+        1230477,
+        1317276
+      ]
+    },
+    "tvdb_id": 361218,
+    "season": {
+      "tvdb": 0
+    },
+    "episode_offset": {
+      "tvdb": 1
+    }
   },
   {
     "type": "TV",
@@ -254426,6 +254826,9 @@
     "animenewsnetwork_id": 33020,
     "anime-planet_id": "dark-machine-the-animation",
     "anisearch_id": 19498,
+    "imdb_id": [
+      "tt39390769"
+    ],
     "livechart_id": 12775,
     "mal_id": 59415,
     "simkl_id": 2526390,
@@ -262127,18 +262530,46 @@
     "anidb_id": 19354,
     "anilist_id": 12343,
     "animenewsnetwork_id": 536,
+    "imdb_id": [
+      "tt0109633"
+    ],
     "kitsu_id": 6708,
     "livechart_id": 8388,
-    "mal_id": 12343
+    "mal_id": 12343,
+    "themoviedb_id": {
+      "tv": 97421
+    },
+    "tvdb_id": 73312,
+    "season": {
+      "tvdb": 2,
+      "tmdb": 1
+    },
+    "episode_offset": {
+      "tmdb": 6
+    }
   },
   {
     "type": "OVA",
     "anidb_id": 19355,
     "anilist_id": 12347,
     "animenewsnetwork_id": 537,
+    "imdb_id": [
+      "tt0109633"
+    ],
     "kitsu_id": 6709,
     "livechart_id": 8390,
-    "mal_id": 12347
+    "mal_id": 12347,
+    "themoviedb_id": {
+      "tv": 97421
+    },
+    "tvdb_id": 73312,
+    "season": {
+      "tvdb": 3,
+      "tmdb": 1
+    },
+    "episode_offset": {
+      "tmdb": 11
+    }
   },
   {
     "type": "ONA",
@@ -264370,6 +264801,9 @@
     "animenewsnetwork_id": 37525,
     "anime-planet_id": "bride-of-the-barrier-master",
     "anisearch_id": 20841,
+    "imdb_id": [
+      "tt43577911"
+    ],
     "kitsu_id": 50103,
     "livechart_id": 13285,
     "mal_id": 62311,
