@@ -2,26 +2,14 @@ import 'dotenv/config';
 import { URL, fileURLToPath } from 'url';
 import path from 'path';
 // FORCE UPDATE VERCEL DEPLOYMENT
-import Redis from 'ioredis';
+
 
 // Global cache (persists in memory as long as server is running/frozen)
 let cachedList = null;
 let lastFetchTime = 0;
 const CACHE_DURATION = 24 * 60 * 60 * 1000; // 24 hours in ms
 
-// Redis Connection (Global to reuse connection in lambda)
-let redis = null;
-if (process.env.REDIS_URL) {
-    try {
-        redis = new Redis(process.env.REDIS_URL);
-        // Silently handle errors to prevent crashes if Redis fails
-        redis.on('error', (err) => console.error('Redis Client Error', err));
-    } catch (e) {
-        console.error('Failed to initialize Redis', e);
-    }
-}
-
-// Global Stats (Fallback / In-Memory State)
+// Global Stats (In-Memory State)
 let stats = {
     totalRequests: 0,
     requestsToday: 0,
@@ -36,55 +24,21 @@ export default async function handler(req, res) {
 
     // --- STATUS ROUTE ---
     if (url.pathname.includes('/status')) {
-        let responseData = { ...stats, status: 'Operational', region: process.env.VERCEL_REGION || 'dev' };
+        const uptime = Date.now() - stats.startTime;
+        const seconds = Math.floor((uptime / 1000) % 60);
+        const minutes = Math.floor((uptime / (1000 * 60)) % 60);
+        const hours = Math.floor((uptime / (1000 * 60 * 60)) % 24);
+        const days = Math.floor((uptime / (1000 * 60 * 60 * 24)));
 
-        // Fetch valid data from Redis if available
-        if (redis) {
-            try {
-                const total = await redis.get('total_requests') || 0;
-                const downloads = await redis.get('json_downloads') || 0;
-
-                // Get daily requests
-                const today = new Date().toISOString().split('T')[0];
-                const daily = await redis.get(`daily_requests:${today}`) || 0;
-
-                // Get or Set Project Start Time
-                let projectStart = await redis.get('project_start_time');
-                if (!projectStart) {
-                    projectStart = Date.now();
-                    await redis.set('project_start_time', projectStart);
-                }
-
-                responseData.total_requests = parseInt(total);
-                responseData.requests_today = parseInt(daily);
-                responseData.json_downloads = parseInt(downloads);
-                responseData.start_time = parseInt(projectStart);
-
-                // Calculate Uptime based on Project Start (Persistence)
-                const uptime = Date.now() - parseInt(projectStart);
-                // Convert uptime to readable string
-                const seconds = Math.floor((uptime / 1000) % 60);
-                const minutes = Math.floor((uptime / (1000 * 60)) % 60);
-                const hours = Math.floor((uptime / (1000 * 60 * 60)) % 24);
-                const days = Math.floor((uptime / (1000 * 60 * 60 * 24)));
-
-                responseData.uptime = `${days}d ${hours}h ${minutes}m ${seconds}s`;
-                responseData.debug = { redis_enabled: true, status: redis.status };
-
-            } catch (err) {
-                console.error('Redis fetch error', err);
-                responseData.debug = { redis_enabled: true, error: err.message };
-            }
-        } else {
-            // In-Memory Uptime
-            const uptime = Date.now() - stats.startTime;
-            const seconds = Math.floor((uptime / 1000) % 60);
-            const minutes = Math.floor((uptime / (1000 * 60)) % 60);
-            const hours = Math.floor((uptime / (1000 * 60 * 60)) % 24);
-            const days = Math.floor((uptime / (1000 * 60 * 60 * 24)));
-            responseData.uptime = `${days}d ${hours}h ${minutes}m ${seconds}s`;
-            responseData.debug = { redis_enabled: false, message: 'No REDIS_URL found' };
-        }
+        let responseData = {
+            ...stats,
+            status: 'Operational',
+            region: process.env.VERCEL_REGION || 'dev',
+            total_requests: stats.totalRequests,
+            requests_today: stats.requestsToday,
+            json_downloads: stats.jsonDownloads,
+            uptime: `${days}d ${hours}h ${minutes}m ${seconds}s`
+        };
 
         return res.status(200).json(responseData);
     }
@@ -102,22 +56,10 @@ export default async function handler(req, res) {
     }
     stats.requestsToday++;
 
-    // Redis Updates
-    if (redis) {
-        try {
-            await redis.incr('total_requests');
-            const today = new Date().toISOString().split('T')[0];
-            await redis.incr(`daily_requests:${today}`);
-            await redis.expire(`daily_requests:${today}`, 172800); // 48h expire
-        } catch (e) {
-            console.error('Redis update error', e);
-        }
-    }
+
 
     // 1. The huge file URL (Self-Hosted Master File)
-    // 1. The huge file URL (Self-Hosted Master File)
-    // 1. The huge file URL (Self-Hosted Master File)
-    const EXTERNAL_URL = 'https://raw.githubusercontent.com/Ramregar97/idmapper/main/public/master_anime.json';
+    const EXTERNAL_URL = 'https://raw.githubusercontent.com/ram22002/idmapper/main/public/master_anime.json';
 
     try {
         // List of supported IDs to search by
@@ -193,9 +135,7 @@ export default async function handler(req, res) {
 
             // Stats update
             stats.jsonDownloads++;
-            if (redis) {
-                redis.incr('json_downloads');
-            }
+
         }
 
         // --- DEBUG ENDPOINT ---
